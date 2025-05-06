@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>নতুন পণ্য তৈরি</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>নতুন পণ্য তৈরি</h1>
+    <div th:if="${error}" class="error">
+        <p th:text="${error}"></p>
+    </div>
+    <form th:object="${product}" th:action="@{/products}" method="post">
+        <div class="form-group">
+            <label for="name">পণ্যের নাম:</label>
+            <input type="text" id="name" th:field="*{name}" class="form-control">
+            <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="error"></span>
+        </div>
+        <div class="form-group">
+            <label for="price">মূল্য:</label>
+            <input type="number" id="price" th:field="*{price}" step="0.01" class="form-control">
+            <span th:if="${#fields.hasErrors('price')}" th:errors="*{price}" class="error"></span>
+        </div>
+        <button type="submit" class="btn">জমা দিন</button>
+    </form>
+    <a href="/products" class="btn">ফিরে যান</a>
+</div>
+</body>
+</html>

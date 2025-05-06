@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>পণ্যের বিবরণ</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>পণ্যের বিবরণ</h1>
+    <p><strong>নাম:</strong> <span th:text="${product.name}"></span></p>
+    <p><strong>মূল্য:</strong> <span th:text="${product.price}"></span> টাকা</p>
+    <a href="/products" class="btn">ফিরে যান</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>পণ্য ব্যবস্থাপনা</h1>
+    <p>একটি নতুন পণ্য তৈরি করুন অথবা বিদ্যমান পণ্য দেখুন।</p>
+    <a href="/products/new" class="btn">নতুন পণ্য তৈরি</a>
+    <form action="/products" method="get">
+        <label for="id">পণ্যের আইডি:</label>
+        <input type="number" id="id" name="id" min="1" required>
+        <button type="submit" class="btn">পণ্য দেখুন</button>
+    </form>
+</div>
+</body>
+</html>
